@@ -1,6 +1,6 @@
 import { WeatherForecastMain } from "@/types";
 
-export default function MainWeather ({
+export default function MainWeatherDetails ({
   temp,
   feels_like: feelsLike,
   temp_min: tempMin,
@@ -16,6 +16,7 @@ export default function MainWeather ({
       <p>{`Temperature: ${temp} F, Feels like: ${feelsLike}, Max: ${tempMax} F, Min: ${tempMin} F`}</p>
       <p>{`Atmospheric Pressure: ${pressure} hPa, Sea Level: ${seaLevel} hPa, Ground Level: ${grndLevel} hPa`}</p>
       <p>{`Humidity: ${humidity}%`}</p>
+      <p>{tempKf}</p>
     </>
   )
 }

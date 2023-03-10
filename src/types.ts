@@ -27,3 +27,9 @@ export interface WeatherForecastMain {
   humidity: number
   temp_kf: number
 }
+
+export interface RainSnowVolumeType {
+  type: "Rain" | "Snow"
+  oneHour?: number
+  threeHour?: number
+}

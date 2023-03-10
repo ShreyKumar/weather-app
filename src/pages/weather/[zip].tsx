@@ -25,7 +25,6 @@ export default function WeatherByZip({ errorMsg, weatherReport }: WeatherByZipPr
   }
   
   const { list, city }: { list: WeatherForecastType, city: CityType } = weatherReport
-  console.log(list)
 
   return (
     <>
