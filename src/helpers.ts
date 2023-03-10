@@ -19,6 +19,7 @@ export function getWeatherAPIUrl (lat: number, lon: number) {
   const urlSearchParams = new URLSearchParams(url.search)
   urlSearchParams.set("lat", lat.toString())
   urlSearchParams.set("lon", lon.toString())
+  urlSearchParams.set("units", "imperial")
   urlSearchParams.set("appId", OPEN_WEATHER_API_KEY)
 
   return `${url.toString()}?${urlSearchParams.toString()}`

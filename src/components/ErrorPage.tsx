@@ -1,4 +1,4 @@
-import SeoHead from "./SEOHead";
+import SeoHead from "./SeoHead";
 
 export default function ErrorPage({ errorMsg }: { errorMsg: string }) {
   return (
