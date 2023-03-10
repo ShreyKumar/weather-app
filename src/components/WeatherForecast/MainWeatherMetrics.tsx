@@ -1,6 +1,6 @@
 import { WeatherForecastMain } from "@/types";
 
-export default function MainWeatherDetails ({
+export default function MainWeatherMetrics ({
   temp,
   feels_like: feelsLike,
   temp_min: tempMin,

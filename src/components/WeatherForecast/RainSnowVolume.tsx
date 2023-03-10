@@ -1,6 +1,10 @@
-import { RainSnowVolumeType } from "@/types";
+interface RainSnowVolumeProps {
+  type: "Rain" | "Snow"
+  oneHour?: number
+  threeHour?: number
+}
 
-export default function RainSnowVolume ({ type, oneHour, threeHour }: RainSnowVolumeType) {
+export default function RainSnowVolume ({ type, oneHour, threeHour }: RainSnowVolumeProps) {
   return (
     <>
       <p>{type}</p>

@@ -1,9 +1,9 @@
 import dayjs from "dayjs"
 import localizedFormat from 'dayjs/plugin/localizedFormat'
-import { WeatherForecastType } from "@/types"
-import MainWeatherDetails from "./MainWeatherDetails"
+import { MainWeatherType, WeatherForecastType } from "@/types"
+import MainWeatherMetrics from "./MainWeatherMetrics"
 import Wind from "./Wind"
-import Weather, { WeatherProps } from "./Weather"
+import MainWeather from "./MainWeather"
 import RainSnowVolume from "./RainSnowVolume"
 import { Accordion, AccordionBody, AccordionHeader } from "@material-tailwind/react"
 import { useState } from "react"
@@ -17,8 +17,8 @@ export default function WeatherForecast ({ dt_txt, weather, main, visibility, cl
     <div className="mb-5 border border-black p-5">
       <p className="font-bold">{time.format('LLLL')}</p>
       {
-        weather.map((weatherInfo: WeatherProps) => {
-          return <Weather key={weatherInfo.icon} {...weatherInfo} />
+        weather.map((weatherInfo: MainWeatherType) => {
+          return <MainWeather key={weatherInfo.icon} {...weatherInfo} />
         })
       }
       <Accordion open={open} className="">
@@ -26,7 +26,7 @@ export default function WeatherForecast ({ dt_txt, weather, main, visibility, cl
           More info
         </AccordionHeader>
         <AccordionBody className="text-black">
-          <MainWeatherDetails {...main} />
+          <MainWeatherMetrics {...main} />
           <p>{`Visibility: ${visibility * 0.001}km`}</p>
           <p>Cloudiness: {`${clouds.all}%`}</p>
           <Wind {...wind} />

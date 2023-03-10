@@ -13,7 +13,23 @@ export interface CityType {
 }
 
 export interface WeatherForecastType {
-  [key: string]: any
+  dt: number
+  dt_txt: string
+  weather: MainWeatherType[]
+  main: WeatherForecastMain
+  visibility: number
+  clouds: {
+    all: number
+  }
+  wind: WindType
+  rain?: {
+    '1h'?: number
+    '3h'?: number
+  }
+  snow?: {
+    '1h'?: number
+    '3h'?: number
+  }
 }
 
 export interface WeatherForecastMain {
@@ -28,8 +44,14 @@ export interface WeatherForecastMain {
   temp_kf: number
 }
 
-export interface RainSnowVolumeType {
-  type: "Rain" | "Snow"
-  oneHour?: number
-  threeHour?: number
+export interface WindType {
+  speed: number
+  deg: number
+  gust: number
+}
+
+export interface MainWeatherType {
+  main: string
+  description: string
+  icon: string
 }

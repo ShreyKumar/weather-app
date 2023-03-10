@@ -1,7 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import { GetServerSideProps, GetServerSidePropsContext } from 'next'
+import { GetServerSidePropsContext } from 'next'
 import { getGeoCodingAPIUrl, getWeatherAPIUrl, resolvedFetch, validateUSZipCode } from '@/helpers'
 import SeoHead from '@/components/SeoHead'
 import ErrorPage from '@/components/ErrorPage'
@@ -9,12 +6,10 @@ import CityDetails from '@/components/CityDetails'
 import { CityType, WeatherForecastType } from '@/types'
 import WeatherForecast from '@/components/WeatherForecast/WeatherForecast'
 
-const inter = Inter({ subsets: ['latin'] })
-
 interface WeatherByZipProps {
   errorMsg?: string
   weatherReport?: {
-    list: WeatherForecastType
+    list: WeatherForecastType[]
     city: CityType
   }
 }
@@ -24,7 +19,7 @@ export default function WeatherByZip({ errorMsg, weatherReport }: WeatherByZipPr
     return <ErrorPage errorMsg={errorMsg as string} />
   }
 
-  const { list, city }: { list: WeatherForecastType, city: CityType } = weatherReport
+  const { list, city }: { list: WeatherForecastType[], city: CityType } = weatherReport
 
   return (
     <>

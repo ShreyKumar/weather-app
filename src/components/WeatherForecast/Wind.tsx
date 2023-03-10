@@ -1,10 +1,6 @@
-interface WindProps {
-  speed: number
-  deg: number
-  gust: number
-}
+import { WindType } from "@/types"
 
-export default function Wind ({ speed, deg, gust }: WindProps) {
+export default function Wind ({ speed, deg, gust }: WindType) {
   return (
     <>
       <p>{`Speed: ${speed}miles/hour`}</p>
