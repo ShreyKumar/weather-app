@@ -35,7 +35,7 @@ export default function WeatherByZip({ errorMsg, weatherReport }: WeatherByZipPr
         <h2>Weather forecast</h2>
         {
           list.map((forecast: WeatherForecastType) => {
-            return <WeatherForecast {...forecast} />
+            return <WeatherForecast key={forecast.dt} {...forecast} />
           })
         }
       </main>
