@@ -6,10 +6,10 @@ export interface WeatherProps {
 
 export default function Weather ({ main, description, icon }: WeatherProps) {
   return (
-    <>
+    <div>
       <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="" />
       <p>{main}</p>
       <p>{description}</p>
-    </>
+    </div>
   )
 }

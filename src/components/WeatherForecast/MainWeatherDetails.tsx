@@ -13,10 +13,10 @@ export default function MainWeatherDetails ({
 }: WeatherForecastMain) {
   return (
     <>
-      <p>{`Temperature: ${temp} F, Feels like: ${feelsLike}, Max: ${tempMax} F, Min: ${tempMin} F`}</p>
+      <p>{`Temperature: ${temp} F, Feels like: ${feelsLike} F, Max: ${tempMax} F, Min: ${tempMin} F`}</p>
       <p>{`Atmospheric Pressure: ${pressure} hPa, Sea Level: ${seaLevel} hPa, Ground Level: ${grndLevel} hPa`}</p>
       <p>{`Humidity: ${humidity}%`}</p>
-      <p>{tempKf}</p>
+      <p>{`Temp KF: ${tempKf}`}</p>
     </>
   )
 }
