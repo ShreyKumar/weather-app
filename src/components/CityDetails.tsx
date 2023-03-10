@@ -8,12 +8,13 @@ export default function CityDetails ({ name, coord, country, population, timezon
   const { lat, lon } = coord
 
   return (
-    <>
-      <h1>{`Weather forecast for ${name}, ${country}`}</h1>
+    <div className='mb-4 container mx-auto'>
+      <h1 className='text-5xl text-center'>{`Weather forecast for ${name}, ${country}`}</h1>
+      <h2 className='text-3xl'>Location profile</h2>
       <p>Location: {`${lat}, ${lon}`}</p>
       <p>Sunrise: {`${sunriseTime.format('H:m a')}`}</p>
       <p>Sunset: {`${sunsetTime.format('H:m a')}`}</p>
       <p>Population: {`${population}`}</p>
-    </>
+    </div>
   )
 }
